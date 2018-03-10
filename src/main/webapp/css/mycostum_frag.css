@@ -1,0 +1,18 @@
+.w-100{
+	width:100% !important;
+	height:340px !important;
+	
+}
+.dropdown-toggle,.dropdown-menu,.active{
+	width:100%;
+	background-color : blue;
+	color:red;
+	font-size:20px;
+}
+.dropdown-toggle:hover,.dropdown-item:hover{
+	background-color : lightblue;
+}
+.dropdown-item:hover{
+	border:1px solid red;
+	background-color:lightblue;
+}

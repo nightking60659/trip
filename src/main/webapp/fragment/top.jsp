@@ -5,46 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<style>
-         *{ 
-                 padding: 0px; 
-         margin: 0px; 
-       
-         } 
-        .tmain{
-            width: 1100px !important;
-            margin: auto !important;
-          
-            overflow: hidden !important;
-            background:rgb(101, 183, 238) !important;
-            
-        }
-        .topimg{
-            width:1100px !important;
-            height: 200px !important;
-            opacity: 0.8 !important;
-        }
-        .top{
-            width:1100px !important;
-        }
-    .topli{
-      text-align: center  !important; 
-        float: left  !important;
-        width:15% !important;
-        border-right:  black solid 2px !important;
-        
-        /* border:  black solid 2px; */
-        
-        border-left: black solid 2px !important;
-        padding:10px 5% !important;
-        background-color:rgb(101, 183, 238) !important;
-        margin-right:-5px;
-    }
-    .topli:hover{
-        background-color: aquamarine;
-        
-    }
-    </style>
+<link rel="stylesheet" href="/trip/css/mycostum_frag.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <div class="tmain">
@@ -56,5 +18,8 @@
             <a href="/trip/selectanddelete.jsp"><div class="topli">查詢及刪除</div></a>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
