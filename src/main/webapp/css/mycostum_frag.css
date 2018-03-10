@@ -5,14 +5,20 @@
 }
 .dropdown-toggle,.dropdown-menu,.active{
 	width:100%;
-	background-color : blue;
+	background-color : #99FFFF;
 	color:red;
 	font-size:20px;
 }
-.dropdown-toggle:hover,.dropdown-item:hover{
+.dropdown-toggle:hover,.active:hover{
 	background-color : lightblue;
 }
 .dropdown-item:hover{
 	border:1px solid red;
 	background-color:lightblue;
+}
+.breadcrumb-item{
+	padding-top:10px;
+	padding-left:10px;
+	padding-right:10px;
+	
 }

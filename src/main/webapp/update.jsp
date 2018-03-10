@@ -84,7 +84,7 @@ padding:1em;
 <c:set var="funcName" value="CT" scope="session"/>
 <jsp:include page="/fragment/top.jsp"/>
 	
-		<div class="body">
+		<div class="body" id="v3">
 			<h1 style="text-align: center;">旅遊資訊</h1>
 			<form action="update" method="post" >
 				<table>

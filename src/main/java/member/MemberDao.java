@@ -3,7 +3,6 @@ package member;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -14,9 +13,9 @@ public class MemberDao{
 	
 	public MemberDao() {
 		try {
+			
 			Context context=new InitialContext();
 			ds=(DataSource)context.lookup("java:comp/env/jdbc/tripDEMO");
-			
 		} catch (NamingException e) {
 		
 			e.printStackTrace();

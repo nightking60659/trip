@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <c:if test="${empty LoginOK}">
-    <c:set var="target" value="${pageContext.request.servletPath}" scope="session"/>
-    <c:redirect url="/login/login.jsp" />
-    </c:if>
+<%--     <c:if test="${empty LoginOK}"> --%>
+<%--     <c:set var="target" value="${pageContext.request.servletPath}" scope="session"/> --%>
+<%--     <c:redirect url="../login/login.jsp" /> --%>
+<%--     </c:if> --%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -89,7 +89,7 @@ padding:1em;
 <c:set var="funcName" value="CT" scope="session"/>
 <jsp:include page="/fragment/top.jsp"/>
 	
-		<div class="body">
+		<div class="body" id="v1">
 		
 			<h1 style="text-align: center;">旅遊資訊</h1>
 			<form action="TripDEMO" method="post" enctype='multipart/form-data'>
@@ -147,12 +147,12 @@ padding:1em;
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input type="radio" name="triptype"	value=landscape>風景 
-							<input type="radio" name="triptype" value="museum">博物館
-							<input type="radio" name="triptype" value="park">公園
-							<input type="radio" name="triptype" value="night market">夜市
-							<input type="radio" name="triptype" value="Monuments">古蹟 
-							<input type="radio" name="triptype" value="sightsee">觀光</td>
+							<input type="radio" name="triptype"	value="風景">風景 
+							<input type="radio" name="triptype" value="博物館">博物館
+							<input type="radio" name="triptype" value="公園">公園
+							<input type="radio" name="triptype" value="夜市">夜市
+							<input type="radio" name="triptype" value="古蹟">古蹟 
+							<input type="radio" name="triptype" value="觀光">觀光</td>
 					</tr>
 
 

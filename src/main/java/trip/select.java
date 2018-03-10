@@ -26,7 +26,7 @@ public class select extends HttpServlet {
 		TripDAO tdb = new TripDAO();
 		TripBean tb=tdb.select(no);
 		request.setAttribute("tripbean",tb);
-		RequestDispatcher rd = request.getRequestDispatcher("/select.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/selectanddelete.jsp");
 		rd.forward(request, response);
 	}
 

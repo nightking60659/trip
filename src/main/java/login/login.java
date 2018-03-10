@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import member.MemberBean;
 
 
-@WebServlet("/login/login")
+@WebServlet("/login")
 public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,6 +22,7 @@ public class login extends HttpServlet {
 		HttpSession session=request.getSession();
 		String userId=request.getParameter("userId");
 		String password= request.getParameter("pswd");
+		String requestURI=(String)session.getAttribute("requestURI");
 		
 		loginService  ls =new loginService();
 		MemberBean mb=null;
@@ -35,16 +36,15 @@ public class login extends HttpServlet {
 		}catch(RuntimeException e) {
 			
 		}
-		String contextPath = getServletContext().getContextPath();
-		String target = (String)session.getAttribute("target");
-		if(target!= null) {
-			session.removeAttribute(target);
-			response.sendRedirect(contextPath+target);
-		}else {
-			response.sendRedirect(contextPath+"/index.jsp");
-		}
-		return;
 		
+		if(requestURI !=null) {
+			requestURI=(requestURI.length()==0?request.getContextPath() : requestURI);
+		response.sendRedirect(response.encodeRedirectURL(requestURI));	
+		return;
+		}else {
+			response.sendRedirect(response.encodeRedirectURL(requestURI));
+		return;
+		}
 //		RequestDispatcher rd=request.getRequestDispatcher("/login.jsp");
 //		rd.forward(request, response);
 //		return;

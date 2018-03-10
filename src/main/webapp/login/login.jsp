@@ -16,7 +16,7 @@
  <!-- 
 <Form Action="<c:url value='login.do' />" method="POST">
  -->
-<Form Action="login" method="POST">
+<Form action="/login/login" method="post">
     <Table width='330' >
          <TR><TH colspan='2'>
             <H1>登入</H1> 
