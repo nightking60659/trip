@@ -10,99 +10,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-	
-	
-}
-.top{
-	width:1100px;
-	overflow:hidden;
-	margin:auto;
-}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="/trip/css/mycostum_crt.css">
 
-body{
-background:rgb(101, 183, 238);
-}
-.body {
-	background-color:#ffd1a4;
-	width: 1000px;
-	height: 95%;
-	margin:0px auto;
- 	padding: 0px 50px; 
-}
-
-table {
-	margin: 0 auto;
-	
-	
-}
-
-td {
-	width:700px;
-	border:solid;
-	
-	
-}
-
-th {
-	border:  solid;
-}
-
-.er{
-	padding: 0px 40%;
-}
-
-.title {
-	width: 100px;
-}
-
-.main {
-	width: 700px;
-}
-
-.maintd {
-	width: 99%;
-	height: 100%;
-	
-}
-
-
-
-textarea {
-	
-	width: 99%;
-	margin:auto;
-	resize: none;
-	overflow-y: auto;
-}
-
-.divmain {
-padding:1em;
-	
-}
-</style>
 </head>
 <body>
 <c:set var="funcName" value="CT" scope="session"/>
 <jsp:include page="/fragment/top.jsp"/>
 	
-		<div class="body" id="v1">
+		<div class="container body" id="v1">
 		
 			<h1 style="text-align: center;">旅遊資訊</h1>
 			<form action="TripDEMO" method="post" enctype='multipart/form-data'>
-				<table>
+				<table class="crt-table">
 					<thead>
 					<tr>
-						<th colspan="2">新增旅遊景點</th>
+						<th class="crt-th" colspan="2">新增旅遊景點</th>
 					</tr>
 					</thead>
 					<tbody>
 					<tr>
-						<td class="title">地區</td>
-						<td class="main">
+						<td class="title crt-td">地區</td>
+						<td class="main crt-td">
 						<select name="tripplace" >
 							<option value="">地區</option>
 							<option value="基隆市">基隆市</option>
@@ -133,43 +62,43 @@ padding:1em;
 							</td>
 					</tr>
 					<tr>
-						<td class="title">景點名稱</td>
-						<td class="main">
+						<td class="title crt-td">景點名稱</td>
+						<td class="main crt-td">
 						<input type="text" name="tripname" value="${param.tripname}" class="maintd" />
 						<div class="er" style="color:#FF0000;font-size:x-small;display:inline;">${ErrorMsg.name}</div>
 						</td>
 					</tr>
 
 					<tr>
-						<td class="title">分享日期</td>
-						<td class="main">
+						<td class="title crt-td">分享日期</td>
+						<td class="main crt-td">
 						<input type="date" name="tripdate" value="${param.tripdate}"/></td>
 					</tr>
 					<tr>
-						<td colspan="2">
-							<input type="radio" name="triptype"	value="風景">風景 
-							<input type="radio" name="triptype" value="博物館">博物館
-							<input type="radio" name="triptype" value="公園">公園
-							<input type="radio" name="triptype" value="夜市">夜市
-							<input type="radio" name="triptype" value="古蹟">古蹟 
-							<input type="radio" name="triptype" value="觀光">觀光</td>
+						<td class = "crt-td" colspan="2">
+							<input type="radio" name="triptype"	value="landscape">風景 
+							<input type="radio" name="triptype" value="museum">博物館
+							<input type="radio" name="triptype" value="park">公園
+							<input type="radio" name="triptype" value="night market">夜市
+							<input type="radio" name="triptype" value="Monuments">古蹟 
+							<input type="radio" name="triptype" value="sightsee">觀光</td> 
 					</tr>
 
 
 
 
 					<tr class=divmain>
-						<td colspan="2">
+						<td class = "crt-td" colspan="2">
 							<span>內容:</span>
 							<div class="er" style="color:#FF0000;font-size:x-small;display:inline;">${ErrorMsg.name}
 							</div>
 							
-							<textarea name="tripmain" placeholder="分享文於此....."  cols="60" rows="20"></textarea>
+							<textarea  class="crt-textarea" name="tripmain" placeholder="分享文於此....."  cols="60" rows="20"></textarea>
 							
 						</td>
 					</tr>
 					<tr >
-						<td colspan="2">
+						<td class= "crt-td" colspan="2">
 						
 						<input type="file" name="tripimage" >
 						<input type="hidden" name="tripno">
@@ -186,6 +115,9 @@ padding:1em;
 		</div>
 	
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>

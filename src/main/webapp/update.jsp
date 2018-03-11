@@ -6,85 +6,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-* {
-	margin: 0;
-	padding: 0;
-	line-height: 2em;
-	
-}
-.top{
-	width:1000px;
-	overflow:hidden;
-	margin:auto;
-}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="/trip/css/mycostum_crt.css">
 
-body{
-background:rgb(101, 183, 238);
-}
-.body {
-	background-color:#ffd1a4;
-	width: 1000px;
-	height: 95%;
-	margin:0px auto;
-	padding: 0px 50px;
-}
-
-table {
-	margin: 0 auto;
-	
-	
-}
-
-td {
-	border:solid;
-	
-	
-}
-
-th {
-	border:  solid;
-}
-
-.er{
-	padding: 0px 40%;
-}
-
-.title {
-	width: 100px;
-}
-
-.main {
-	width: 700px;
-}
-
-.maintd {
-	width: 99%;
-	height: 100%;
-	
-}
-
-
-
-textarea {
-	
-	width: 99%;
-	margin:auto;
-	resize: none;
-	overflow-y: auto;
-}
-
-.divmain {
-padding:1em;
-	
-}
-</style>
 </head>
 <body>
 <c:set var="funcName" value="CT" scope="session"/>
 <jsp:include page="/fragment/top.jsp"/>
 	
-		<div class="body" id="v3">
+		<div class="container body" id="v3">
 			<h1 style="text-align: center;">旅遊資訊</h1>
 			<form action="update" method="post" >
 				<table>
@@ -187,6 +117,9 @@ padding:1em;
 		</div>
 	
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>

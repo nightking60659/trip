@@ -27,7 +27,7 @@
 <body>
 <c:set var="funcName" value="CT" scope="session" />
 <jsp:include page="/fragment/top.jsp" />
-<div class="body">
+<div class="container body">
 		<div class="btnsd">
 			<div class="btn">
 				<form action="select" method="post">

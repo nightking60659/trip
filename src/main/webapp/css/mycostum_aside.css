@@ -1,0 +1,15 @@
+aside{
+	width:200px;
+	margin-left:150px;
+	margin-top: 50px;
+}
+.nav-pills{
+	
+	
+	float:left;
+}
+.fade{
+	border:1px red solid;
+	margin-left:200px !important;
+	margin-top: 10px !important;
+}

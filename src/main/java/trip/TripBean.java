@@ -19,7 +19,7 @@ public class TripBean {
 	private String date;
 	private String type;
 	private String main;
-	private Blob image;
+	private String image;
 	private java.sql.Timestamp tdate;
 
 	public TripBean() {
@@ -37,7 +37,7 @@ public class TripBean {
 		this.tdate = tdate;
 	}
 
-	public TripBean(String no,String place, String name, String date, String type, String main,Blob image, Timestamp tdate) {
+	public TripBean(String no,String place, String name, String date, String type, String main,String image, Timestamp tdate) {
 		this.no = no;
 		this.place = place;
 		this.name = name;
@@ -121,10 +121,10 @@ public class TripBean {
 		return main;
 	}
 
-//	public Blob getImage() {
-//		
-//		return image;
-//	}
+	public String getImage() {
+		
+		return image;
+	}
 
 	public void setNo(String no) {
 		this.no = no;
@@ -156,12 +156,12 @@ public class TripBean {
 	public void setMain(String main) {
 		this.main = main;
 	}
-//
-//	public void setImage(Blob image) {
-//
-//		this.image = image;
-//
-//	}
+
+	public void setImage(String image) {
+
+		this.image = image;
+
+	}
 }
 
 //

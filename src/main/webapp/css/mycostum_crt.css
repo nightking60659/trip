@@ -1,0 +1,67 @@
+* {
+	margin: 0;
+	padding: 0;
+	
+	
+}
+.top{
+	width:1100px;
+	overflow:hidden;
+	margin:auto;
+}
+
+body{
+background:rgb(101, 183, 238);
+}
+.body {
+	background-color:#ffd1a4;
+	width: 1000px;
+	height: 95%;
+	margin:0px auto;
+ 	padding: 0px 50px; 
+}
+
+.crt-table {
+	margin: 0 auto;
+	
+	
+}
+.crt-td{border:solid;}
+
+
+.crt-th {
+	border:  solid;
+}
+
+.er{
+	padding: 0px 40%;
+}
+
+.title {
+	width: 100px;
+}
+
+.main {
+	width: 700px;
+}
+
+.maintd {
+	width: 99%;
+	height: 100%;
+	
+}
+
+
+
+.crt-textarea {
+	
+	width: 99%;
+	margin:auto;
+	resize: none;
+	overflow-y: auto;
+}
+
+.divmain {
+padding:1em;
+	
+}

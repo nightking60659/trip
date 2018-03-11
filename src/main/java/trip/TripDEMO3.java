@@ -3,6 +3,9 @@ package trip;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -99,7 +102,12 @@ public class TripDEMO3 extends HttpServlet {
 						is = p.getInputStream();
 						String saveDir=getServletContext().getRealPath("/")+"images/clients/"+type+"/";
 						int len;
-
+						Path mir =Paths.get(saveDir); 
+						if(Files.exists(mir)) {
+							System.out.println("exist");
+						}else if(!Files.exists(mir) ){
+							Files.createDirectory(mir);
+						}
 						FileOutputStream fos=new FileOutputStream(saveDir+fileName);
 						byte[] b= new byte[8192];
 						while((len=is.read(b))!=-1) {
@@ -114,7 +122,7 @@ public class TripDEMO3 extends HttpServlet {
 					TripDAO td = new TripDAO();// connection
 					Timestamp ts = new java.sql.Timestamp(System.currentTimeMillis());
 //					Blob blob = SystemUtils.fileToBlob(is, sizeInByte);
-					TripBean tb = new TripBean(null, place, name, date, type, main, null, ts);
+					TripBean tb = new TripBean(null, place, name, date, type, main, fileName, ts);
 					td.insertTrip(tb);
 					msgOK.put("insertOK", "新增成功");
 					response.sendRedirect("index.jsp");

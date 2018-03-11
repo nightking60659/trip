@@ -56,7 +56,7 @@ public class TripDAO {
 				result.setDate(rset.getString("date"));
 				result.setType(rset.getString("type"));
 				result.setMain(rset.getString("main"));
-//				result.setIs(rset.getBinaryStream("trippic"));
+				result.setImage(rset.getString("trippic"));
 				result.setTdate(rset.getTimestamp("tdate"));
 			}
 		} catch (SQLException e) {
@@ -114,7 +114,7 @@ public class TripDAO {
 				temp.setDate(rset.getString("date"));
 				temp.setType(rset.getString("type"));
 				temp.setMain(rset.getString("main"));
-//				temp.setIs(rset.getBinaryStream("trippic"));
+				temp.setImage(rset.getString("trippic"));
 				temp.setTdate(rset.getTimestamp("tdate"));
 			}
 		} catch (SQLException e) {
@@ -149,7 +149,7 @@ public class TripDAO {
 		return result;
 	}
 	
-	private static final String Insert="insert into trip (placeno,name,date,type,main,tdate) values (?,?,?,?,?,?)";
+	private static final String Insert="insert into trip (placeno,name,date,type,main,ImageName,tdate) values (?,?,?,?,?,?,?)";
 	
 	public TripBean insertTrip(TripBean bean) throws SQLException{
 		TripBean result=null;
@@ -173,9 +173,9 @@ public class TripDAO {
 			stmt.setString(3, bean.getDate());
 			stmt.setString(4, bean.getType());
 			stmt.setString(5, bean.getMain());
-//			stmt.setBlob(6, bean.getImage());
+			stmt.setString(6, bean.getImage());
 			Timestamp ts=new Timestamp(System.currentTimeMillis());
-			stmt.setTimestamp(6, ts);
+			stmt.setTimestamp(7, ts);
 			
 			int i = stmt.executeUpdate();
 			if(i==1){
