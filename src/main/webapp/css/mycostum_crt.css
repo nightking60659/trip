@@ -10,16 +10,16 @@
 	margin:auto;
 }
 
-body{
-background:rgb(101, 183, 238);
-}
-.body {
+
+.crt-body{
 	background-color:#ffd1a4;
 	width: 1000px;
 	height: 95%;
 	margin:0px auto;
  	padding: 0px 50px; 
+ 	background-color:#ffffcc;
 }
+
 
 .crt-table {
 	margin: 0 auto;

@@ -1,0 +1,14 @@
+*{
+	margin:0;
+	padding:0;
+}
+.body {
+	width: 1000px;
+	margin: 10px auto;
+	border: 1px red solid;
+}
+
+ .btn{
+	float: left;
+	
+}

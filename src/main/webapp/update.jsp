@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <link rel="stylesheet" href="/trip/css/mycostum_crt.css">
 
 </head>
@@ -14,13 +14,13 @@
 <c:set var="funcName" value="CT" scope="session"/>
 <jsp:include page="/fragment/top.jsp"/>
 	
-		<div class="container body" id="v3">
+		<div class="container crt-body" id="v3">
 			<h1 style="text-align: center;">旅遊資訊</h1>
 			<form action="update" method="post" >
-				<table>
+				<table class="crt-table">
 					<thead>
 					<tr>
-						<th colspan="2">更新資料</th>
+						<th class="crt-th" colspan="2">更新資料</th>
 					</tr>
 					</thead>
 					<tbody>
@@ -32,8 +32,8 @@
 					</tr>
 					<tr>
 					
-						<td class="title">地區</td>
-						<td class="main">
+						<td class="title crt-td">地區</td>
+						<td class="main crt-td">
 						<select name="tripplace" >
 							<option value="">地區</option>
 							<option value="基隆市">基隆市</option>
@@ -64,20 +64,20 @@
 							</td>
 					</tr>
 					<tr>
-						<td class="title">景點名稱</td>
-						<td class="main">
+						<td class="title crt-td">景點名稱</td>
+						<td class="main crt-td">
 						<input type="text" name="tripname" value="${param.tripname}" class="maintd" />
 						<div style="color:#FF0000;font-size:x-small;display:inline;">${ErrorMsg.name}</div>
 						</td>
 					</tr>
 
 					<tr>
-						<td class="title">分享日期</td>
-						<td class="main">
+						<td class="title crt-td">分享日期</td>
+						<td class="main crt-td">
 						<input type="date" name="tripdate" value="${param.tripdate}"/></td>
 					</tr>
 					<tr>
-						<td colspan="2">
+						<td class="crt-td" colspan="2">
 							<input type="radio" name="triptype"	value=landscape>風景 
 							<input type="radio" name="triptype" value="museum">博物館
 							<input type="radio" name="triptype" value="park">公園
@@ -90,7 +90,7 @@
 
 
 					<tr class=divmain>
-						<td colspan="2">
+						<td class="crt-td" colspan="2">
 							<span>內容:</span>
 							<div style="color:#FF0000;font-size:x-small;display:inline;">${ErrorMsg.name}
 							</div>
@@ -100,7 +100,7 @@
 						</td>
 					</tr>
 					<tr >
-						<td colspan="2">
+						<td class="crt-td" colspan="2">
 						
 						<input type="file" name="trippic" >
 						
@@ -117,9 +117,6 @@
 		</div>
 	
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>
