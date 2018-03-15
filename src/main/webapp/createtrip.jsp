@@ -12,7 +12,8 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="/trip/css/mycostum_crt.css">
-
+<link rel="stylesheet" href="/trip/css/jquery-ui.theme.DatePicker.min.css">
+<link rel="stylesheet" href="/trip/css/jquery-ui.structure.DatePicker.min.css">
 </head>
 <body>
 <c:set var="funcName" value="CT" scope="session" />
@@ -72,7 +73,7 @@
 					<tr>
 						<td class="title crt-td">分享日期</td>
 						<td class="main crt-td">
-						<input type="date" name="tripdate" value="${param.tripdate}"/></td>
+						<input type="text" id="datepicker" name="tripdate" value="${param.tripdate}"/></td>
 					</tr>
 					<tr>
 						<td class = "crt-td" colspan="2">
@@ -113,8 +114,18 @@
 			</form>
 
 		</div>
-	
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	 -->
+<script src="js/jquery-ui.DatePicker.min.js"></script>
+<script>
+$( function() {
+    $( "#datepicker" ).datepicker({
+      showOtherMonths: true,
+      selectOtherMonths: true
+    });
+  } );
+</script>
 
 </body>
 </html>
