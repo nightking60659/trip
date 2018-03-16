@@ -1,4 +1,4 @@
-package trip;
+package _trip_tool;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -7,7 +7,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/trip/css/mycostum_crt.css">
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+.body {
+	width: 1000px;
+	margin: 10px auto;
+	border: 1px red solid;
+}
+
+ .btn{
+	float: left;
+	
+}
+</style>
 </head>
 <body>
 <c:set var="funcName" value="CT" scope="session" />

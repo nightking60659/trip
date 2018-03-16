@@ -1,4 +1,7 @@
-package trip;
+package trip.controller;
+
+
+
 
 import java.io.IOException;
 import java.sql.Date;
@@ -8,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
+
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,19 +22,20 @@ import javax.servlet.http.HttpServletResponse;
 import trip.DAO.TripDAO;
 import trip.model.TripBean;
 
-/**
- * Servlet implementation class update
- */
-@WebServlet("/update")
-public class update extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+@WebServlet("/TripDEMO2")
+public class TripDEMO extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	String TripDBString;
+	@Override
+	public void init() throws ServletException {
+		
+		TripDBString = getInitParameter("DBString");
+	}
+	
+   	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		Map<String,String> errorMessage=new HashMap<String,String>();
 		request.setAttribute("ErrorMsg", errorMessage);
 		
@@ -44,20 +50,20 @@ public class update extends HttpServlet {
 //			errorMessage.put("place", "地區必須選擇");
 //		}
 		String name=request.getParameter("tripname");
-		if(name==null||name.trim().length()==0) {
-			errorMessage.put("name", "標題必須輸入");
-		}
+//		if(name==null||name.trim().length()==0) {
+//			errorMessage.put("name", "標題必須輸入");
+//		}
 		String tdate=request.getParameter("tripdate");
 //		Date date=Date.valueOf(tdate);
 		String type=request.getParameter("triptype");
-		if(type==null) {
-			errorMessage.put("type", "請選擇分類");
-		}
+//		if(type==null) {
+//			errorMessage.put("type", "請選擇分類");
+//		}
 		
 		String main= request.getParameter("tripmain");
-		if(main==null) {
-			errorMessage.put("main","請輸入內容");
-		}
+//		if(main==null) {
+//			errorMessage.put("main","請輸入內容");
+//		}
 //		String image = request.getParameter("trippic");
 		
 		Timestamp ts=new Timestamp(System.currentTimeMillis());
@@ -71,7 +77,8 @@ public class update extends HttpServlet {
 		try {
 		
 		TripDAO tdb=new TripDAO();
-			tdb.updateTrip(tb);
+			tdb.insertTrip(tb);
+			
 		request.setAttribute("tripBean", tb);
 		RequestDispatcher rd = request.getRequestDispatcher("/Sucess.jsp");
 		rd.forward(request, response);
@@ -93,7 +100,5 @@ public class update extends HttpServlet {
    
 	
 
-
-	
 
 }

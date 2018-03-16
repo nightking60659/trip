@@ -1,4 +1,4 @@
-package trip;
+package trip.controller;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,10 +22,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import _trip_tool.GlobalService;
+import trip.DAO.TripDAO;
+import trip.model.TripBean;
+
 @MultipartConfig(location = "", fileSizeThreshold = 5 * 1024 * 1024, maxFileSize = 1024 * 1024
 		* 500, maxRequestSize = 1024 * 1024 * 500 * 5)
 @WebServlet("/TripDEMO")
-public class TripDEMO extends HttpServlet {
+public class TripDEMO3 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

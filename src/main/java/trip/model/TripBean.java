@@ -1,4 +1,4 @@
-package trip;
+package trip.model;
 
 import java.sql.Blob;
 import java.sql.Date;

@@ -1,4 +1,4 @@
-package trip;
+package trip.DAO;
 
 
 import java.sql.Connection;
@@ -14,17 +14,19 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import trip.model.TripBean;
 
 
 
 
-public class TripDAO {
+
+public class TripDAO2 {
 	
 	
 
 	DataSource ds = null;
 
-	public TripDAO(){
+	public TripDAO2(){
 //		String conUrl = "jdbc:sqlserver://localhost:1433;databaseName=tripdb";
 		try {
 			Context context=new InitialContext();
@@ -56,7 +58,7 @@ public class TripDAO {
 				result.setDate(rset.getString("date"));
 				result.setType(rset.getString("type"));
 				result.setMain(rset.getString("main"));
-				result.setImage(rset.getString("trippic"));
+//				result.setIs(rset.getBinaryStream("trippic"));
 				result.setTdate(rset.getTimestamp("tdate"));
 			}
 		} catch (SQLException e) {
@@ -114,7 +116,7 @@ public class TripDAO {
 				temp.setDate(rset.getString("date"));
 				temp.setType(rset.getString("type"));
 				temp.setMain(rset.getString("main"));
-				temp.setImage(rset.getString("trippic"));
+//				temp.setIs(rset.getBinaryStream("trippic"));
 				temp.setTdate(rset.getTimestamp("tdate"));
 			}
 		} catch (SQLException e) {
@@ -149,7 +151,7 @@ public class TripDAO {
 		return result;
 	}
 	
-	private static final String Insert="insert into trip (placeno,name,date,type,main,ImageName,tdate) values (?,?,?,?,?,?,?)";
+	private static final String Insert="insert into trip (placeno,name,date,type,main,trip_image,tdate) values (?,?,?,?,?,?,?)";
 	
 	public TripBean insertTrip(TripBean bean) throws SQLException{
 		TripBean result=null;
@@ -173,7 +175,7 @@ public class TripDAO {
 			stmt.setString(3, bean.getDate());
 			stmt.setString(4, bean.getType());
 			stmt.setString(5, bean.getMain());
-			stmt.setString(6, bean.getImage());
+			stmt.setBlob(6, bean.getImage());
 			Timestamp ts=new Timestamp(System.currentTimeMillis());
 			stmt.setTimestamp(7, ts);
 			
@@ -228,7 +230,7 @@ private static final String update="update trip set placeno=?,name=?,date=?,type
 			stmt.setString(3, bean.getDate());
 			stmt.setString(4, bean.getType());
 			stmt.setString(5, bean.getMain());
-//			stmt.setBlob(6, bean.getImage());
+			stmt.setBlob(6, bean.getImage());
 			Timestamp ts=new Timestamp(System.currentTimeMillis());
 			stmt.setTimestamp(6, ts);
 			stmt.setString(7, bean.getNo());
