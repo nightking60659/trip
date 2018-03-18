@@ -16,7 +16,8 @@
  <!-- 
 <Form Action="<c:url value='login.do' />" method="POST">
  -->
-<Form action="/login/login" method="post">
+ 
+<Form action="<c:url value='/login/login' />" method="post">
     <Table width='330' >
          <TR><TH colspan='2'>
             <H1>登入</H1> 
@@ -24,15 +25,15 @@
          <TR>
              <TD align="RIGHT">帳號：</TD>
              <TD align="LEFT"><input	type="text" name="userId" size="10"></TD>
-             <TD width='120'><small><Font color='red' size="-1">${ErrorMsgKey.AccountEmptyError}</Font></small></TD>
+             <TD width='120'><small><Font color='red' size="-1">${ErrorMsgMap.AccountError}</Font></small></TD>
          </TR>
          <TR>
              <TD align="RIGHT">密碼：</TD>
              <TD align="LEFT" ><input	type="password" name="pswd"  size="10"></TD>
-             <TD width='120'><small><Font color='red'  size="-1">${ErrorMsgKey.PasswordEmptyError}</Font></small></TD>
+             <TD width='120'><small><Font color='red'  size="-1">${ErrorMsgMap.passwordError}</Font></small></TD>
          </TR>            
          <TR>
-             <TD align="CENTER" colspan='3'><Font color='red' size="-1">${ErrorMsgKey.LoginError}&nbsp;</Font></TD>
+             <TD align="CENTER" colspan='3'><Font color='red' size="-1">${ErrorMsgMap.loginError}&nbsp;</Font></TD>
              
          </TR>
             

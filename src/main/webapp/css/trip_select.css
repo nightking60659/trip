@@ -1,0 +1,10 @@
+.card{
+	width: 30rem !important;
+	float:left;
+	height: 30rem;
+	overflow-y: scroll;
+
+}
+.img-body{
+	width:100%;
+}

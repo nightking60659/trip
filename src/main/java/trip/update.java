@@ -13,7 +13,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import member.MemberBean;
+import member.MemberDao;
 import trip.DAO.TripDAO;
 import trip.model.TripBean;
 
@@ -34,31 +37,21 @@ public class update extends HttpServlet {
 		request.setAttribute("ErrorMsg", errorMessage);
 		
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
+		MemberBean mb = (MemberBean) session.getAttribute("LoginOK");
 		
-		String tno=request.getParameter("tripno");
-//		if(tno==null||tno.trim().length()==0) {
-//			errorMessage.put("no", "地區必須選擇");
-//		}
-		String place=request.getParameter("tripplace");
-//		if(place==null||tno.trim().length()==0) {
-//			errorMessage.put("place", "地區必須選擇");
-//		}
-		String name=request.getParameter("tripname");
-		if(name==null||name.trim().length()==0) {
-			errorMessage.put("name", "標題必須輸入");
-		}
-		String tdate=request.getParameter("tripdate");
-//		Date date=Date.valueOf(tdate);
-		String type=request.getParameter("triptype");
-		if(type==null) {
-			errorMessage.put("type", "請選擇分類");
-		}
+		String memeberid = mb.getMid();
+		TripDAO td = new TripDAO();
+		TripBean bean = td.select(memeberid);
 		
-		String main= request.getParameter("tripmain");
-		if(main==null) {
-			errorMessage.put("main","請輸入內容");
-		}
-//		String image = request.getParameter("trippic");
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		Timestamp ts=new Timestamp(System.currentTimeMillis());
 	
@@ -67,7 +60,7 @@ public class update extends HttpServlet {
 		rd.forward(request, response);
 		return;
 	}
-		TripBean tb = new TripBean(tno,place,name,tdate,type,main,ts);
+		TripBean tb = new TripBean(memberid, viewid, place, name, date, type, main, image, tdate)
 		try {
 		
 		TripDAO tdb=new TripDAO();

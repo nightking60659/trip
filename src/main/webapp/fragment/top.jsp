@@ -25,9 +25,9 @@
    <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">景點</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="createtrip.jsp">新增景點</a>
-      <a class="dropdown-item" href="selectanddelete.jsp">查詢景點</a>
-      <a class="dropdown-item" href="update.jsp">刪除景點</a>
+      <a class="dropdown-item" href="/trip/createtrip.jsp">新增景點</a>
+      <a class="dropdown-item" href="/trip/selectanddelete.jsp">查詢景點</a>
+      <a class="dropdown-item" href="/trip/update.jsp">更新景點</a>
     </div>
   </li>
    <li class="nav-item dropdown">
@@ -55,8 +55,8 @@
     </div>
     
   </li>
-    <li class="breadcrumb-item"><a href="#">註冊</a></li>
-    <li class="breadcrumb-item"><a href="#">登入</a></li>
+    <li class="breadcrumb-item"><a href="../login/register.jsp">註冊</a></li>
+    <li class="breadcrumb-item"><a href="../login/login.jsp">登入</a></li>
   
 </ul>
 

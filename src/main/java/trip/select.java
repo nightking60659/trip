@@ -1,19 +1,20 @@
 package trip;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 
-import javax.servlet.RequestDispatcher;
+import java.io.PrintWriter;
+import java.util.LinkedList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.JSONValue;
+
 import trip.DAO.TripDAO;
-import trip.model.TripBean;
+
 
 /**
  * Servlet implementation class select
@@ -22,31 +23,22 @@ import trip.model.TripBean;
 public class select extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		response.setHeader("Access-Control","*");
+		response.setHeader("content-Type", "application/json;charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out =response.getWriter();
 		
-		String no = request.getParameter("tripno");
+		TripDAO tdo = new TripDAO();
+		LinkedList l1= tdo.select();
+		String json = JSONValue.toJSONString(l1);
+		out.println(json);
 		
-		
-		TripDAO tdb = new TripDAO();
-		TripBean tb=tdb.select(no);
-		
-		request.setAttribute("tripbean",tb);
-		String type =tb.getType();
-		String image=tb.getImage();
-		String saveDir=getServletContext().getRealPath("/")+"images/clients/"+type+"/";
-		FileInputStream is = new FileInputStream(saveDir+image);
-		OutputStream os=response.getOutputStream();
-		
-		int len=0;
-		byte[] b= new byte[8192];
-		while((len=is.read(b))!=-1) {
-			os.write(b,0,len);
-		}
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/selectanddelete.jsp");
-		rd.forward(request, response);
 	}
+
+	
+	
 
 }

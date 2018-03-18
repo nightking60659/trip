@@ -12,10 +12,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class TripBean {
-	private String no;
+	private String memberid;
+	private String viewid;
 	private String place;
 	private String name;
-	// private java.sql.Date date;
 	private String date;
 	private String type;
 	private String main;
@@ -26,19 +26,11 @@ public class TripBean {
 
 	}
 
-	public TripBean(String no,String place, String name, String date, String type, String main, Timestamp tdate) {
-		this.no = no;
-		this.place = place;
-		this.name = name;
-		this.date = date;
-		this.type = type;
-		this.main = main;
-//		this.image = image;
-		this.tdate = tdate;
-	}
-
-	public TripBean(String no,String place, String name, String date, String type, String main,String image, Timestamp tdate) {
-		this.no = no;
+	public TripBean(String memberid, String viewid, String place, String name, String date, String type, String main,
+			String image, Timestamp tdate) {
+	
+		this.memberid = memberid;
+		this.viewid = viewid;
 		this.place = place;
 		this.name = name;
 		this.date = date;
@@ -47,6 +39,8 @@ public class TripBean {
 		this.image = image;
 		this.tdate = tdate;
 	}
+
+	
 
 	public void getConnection() {
 
@@ -74,109 +68,69 @@ public class TripBean {
 		return result;
 	}
 
-//	private static long convertFile(String image) {
-//
-//		File file = new File(image);
-//		long l1 = file.length();
-//		
-//		return l1;
-//
-//	}
-//
-//	private static FileInputStream convertFIS(File file) {
-//
-//		FileInputStream fis = null;
-//		try {
-//			fis = new FileInputStream(file);
-//		} catch (FileNotFoundException e) {
-//			
-//			e.printStackTrace();
-//		}
-//
-//		return fis;
-//
-//	}
-	public String getNo() {
-		return no;
+	public String getMemberid() {
+		return memberid;
 	}
-		
+
+	public void setMemberid(String memberid) {
+		this.memberid = memberid;
+	}
+
+	public String getViewid() {
+		return viewid;
+	}
+
+	public void setViewid(String viewid) {
+		this.viewid = viewid;
+	}
+
 	public String getPlace() {
 		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
 	}
 
 	public String getName() {
 		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getDate() {
 		return date;
 	}
 
-	public String getType() {
+	public void setDate(String date) {
+		this.date = date;
+	}
 
+	public String getType() {
 		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getMain() {
 		return main;
 	}
 
-	public String getImage() {
-		
-		return image;
-	}
-
-	public void setNo(String no) {
-		this.no = no;
-
-	}
-	
-	public void setPlace(String place) {
-		this.place = place;
-
-	}
-
-	public void setName(String name) {
-		this.name = name;
-
-	}
-
-	// public void setDate(java.sql.Date date){
-	// this.date=date;
-	// }
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-	public void setType(String type) {
-
-		this.type = type;
-	}
-
 	public void setMain(String main) {
 		this.main = main;
 	}
 
-	public void setImage(String image) {
-
-		this.image = image;
-
+	public String getImage() {
+		return image;
 	}
-}
 
-//
-// FileOutputStream fileOutputStream = new FileOutputStream(path);
-// byte[] buf = new byte[1024];
-// int len = 0;
-// while ((len = inputStream.read(buf)) != -1) {
-// fileOutputStream.write(buf, 0, len);// 写
-// }
-// inputStream.close();
-// fileOutputStream.close();
-// } catch (FileNotFoundException e) {
-// e.printStackTrace();
-// } catch (IOException e) {
-// e.printStackTrace();
-// }
-// }
-// }
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+}
+	

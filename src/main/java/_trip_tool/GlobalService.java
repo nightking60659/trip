@@ -139,6 +139,7 @@ public class GlobalService {
 
 	public static String getFileName(final Part part) {
 		for (String content : part.getHeader("content-disposition").split(";")) {
+			System.out.println(content);
 			if (content.trim().startsWith("filename")) {
 				return content.substring(content.indexOf('=') + 1).trim().replace("\"", "");
 			}
