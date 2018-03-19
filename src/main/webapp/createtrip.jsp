@@ -12,6 +12,9 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="/trip/css/mycostum_crt.css">
+<link rel="stylesheet" href="/trip/css/jquery-ui.DatePicker.min.css">
+<link rel="stylesheet" href="/trip/css/jquery-ui.structure.DatePicker.min.css">
+<link rel="stylesheet" href="/trip/css/jquery-ui.theme.DatePicker.min.css">
 
 </head>
 <body>
@@ -72,7 +75,7 @@
 					<tr>
 						<td class="title crt-td">分享日期</td>
 						<td class="main crt-td">
-						<input type="date" name="tripdate" value="${param.tripdate}"/></td>
+						<input type="text" name="tripdate" id="datepicker" value="${param.tripdate}"/></td>
 					</tr>
 					<tr>
 						<td class = "crt-td" colspan="2">
@@ -135,6 +138,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.ckeditor.com/4.7.3/standard-all/ckeditor.js"></script>
+<script src="js/jquery-ui.DatePicker.min.js"></script>
 <script>
 $(document).ready(function(){
 	CKEDITOR.plugins.addExternal("codesnippet", "https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.7.3/plugins/codesnippet/plugin.js", "");
@@ -142,12 +146,14 @@ $(document).ready(function(){
 	extraPlugins: "codesnippet",
 	codeSnippet_theme: "solarized_dark",
 		removeButtons: 'Replace,Scayt,Source,Anchor,Table,Maximize,Image',
-		skin :'moono',
-	}
-	);
-
+		skin :'moono',});
+	
 	
 })
+$( "#datepicker" ).datepicker({
+	      showOtherMonths: true,
+	      selectOtherMonths: true
+	    });
 </script>
 </body>
 </html>
