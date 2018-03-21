@@ -15,7 +15,9 @@
 <link rel="stylesheet" href="/trip/css/jquery-ui.DatePicker.min.css">
 <link rel="stylesheet" href="/trip/css/jquery-ui.structure.DatePicker.min.css">
 <link rel="stylesheet" href="/trip/css/jquery-ui.theme.DatePicker.min.css">
+<style>
 
+</style>
 </head>
 <body>
 <c:set var="funcName" value="CT" scope="session"/>
@@ -118,7 +120,7 @@
 						
 						 <div class="form-group">
 					    <label for="exampleFormControlFile1">新增圖片</label>
-					    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+					    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imagename">
 					  	</div>
 											
 						<input type="hidden" name="tripno">
@@ -135,10 +137,11 @@
 		</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
 <script src="https://cdn.ckeditor.com/4.7.3/standard-all/ckeditor.js"></script>
 <script src="js/jquery-ui.DatePicker.min.js"></script>
+
 <script>
 $(document).ready(function(){
 	CKEDITOR.plugins.addExternal("codesnippet", "https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.7.3/plugins/codesnippet/plugin.js", "");
@@ -154,6 +157,7 @@ $( "#datepicker" ).datepicker({
 	      showOtherMonths: true,
 	      selectOtherMonths: true
 	    });
+  
 </script>
 </body>
 </html>

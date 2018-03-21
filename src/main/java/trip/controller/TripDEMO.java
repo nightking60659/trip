@@ -131,6 +131,7 @@ public class TripDEMO extends HttpServlet {
 						is = p.getInputStream();
 						System.out.println(type);
 						String saveDir=getServletContext().getRealPath("/")+"images\\clients\\"+type;
+						System.out.println(saveDir);
 //						String saveDir=application
 						System.out.println(saveDir);
 						int len;

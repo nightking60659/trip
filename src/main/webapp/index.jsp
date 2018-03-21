@@ -8,7 +8,8 @@
 <title>Home</title>
 <style type="text/css">
 body{
-background:rgb(101, 183, 238);
+background-image:url("/trip/images/body.jpg");
+background-attachment: fixed;
 }
 </style>
 </head>

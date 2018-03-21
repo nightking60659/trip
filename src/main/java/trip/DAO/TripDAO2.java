@@ -58,7 +58,6 @@ public class TripDAO2 {
 				result.setDate(rset.getString("date"));
 				result.setType(rset.getString("type"));
 				result.setMain(rset.getString("main"));
-//				result.setIs(rset.getBinaryStream("trippic"));
 				result.setTdate(rset.getTimestamp("tdate"));
 			}
 		} catch (SQLException e) {
