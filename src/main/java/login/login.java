@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import member.MemberBean;
+import _trip.model.MemberBean;
 
 
 @WebServlet("/login/login") 

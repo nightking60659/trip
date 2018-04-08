@@ -14,6 +14,30 @@
 <c:set var="funcName" value="CT" scope="session"/>
 <jsp:include page="/fragment/top.jsp"/>
 
+	<div>
+	<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+  <label class="form-check-label" for="inlineCheckbox1">風景</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">博物館</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">公園</label>
+</div><div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">夜市</label>
+</div><div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">2</label>
+</div><div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+  <label class="form-check-label" for="inlineCheckbox2">2</label>
+</div>
+
+	</div>
 
 		<div class=container justify-content-center></div>
 
@@ -21,7 +45,7 @@
 		$(document).ready(function(){
 			loadTrip();
 			
-// 	function loadselect(type,placeno){
+// 	function loadselect(type,place){
 // 		$.getJson('select',{type:type,placeno:placeno,function(dates){
 			
 // 		})
@@ -31,12 +55,12 @@
 			$.getJSON('select',function(datas){
 				var docFrag = $(document.createDocumentFragment());
 				
-				$.each(datas, function (idx,trip){
+				$.each(datas, function (idx,view){
 					
-					var title = $("<div class='card-title'></div>").text(trip.name);
-					var main = $("<p class='card-text'></p>").text(trip.main);
+					var title = $("<div class='card-title'></div>").text(view.viewname);
+					var main = $("<p class='card-text'></p>").html(view.viewmain);
 					var alink =$("<a class='btn btn-primary'>link</a>")
-					var img = $("<img class='img-body' />").attr("src","images/clients/"+trip.type+"/"+trip.imagename)
+					var img = $("<img class='img-body' />").attr("src","images/clients/"+view.tripType+"/"+view.imagename)
 					var body = $("<div class='card-body'></div>").html([title,main,alink]);
 					var card = $("<div class='card'></div>").html([img,body]);
 					var row = $("<div></div>").append(card);

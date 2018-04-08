@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<context displayName="trip" docBase="trip" path="/trip" reloadable="true">
-
-<resource name="jdbc/sqlserver" auth="Container"  type="javax.sql.DataSource" 
-			username="sa" password="sa123456" 
-			driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-			url="jdbc:sqlserver://localhost:1433;DatabaseName=tripdb" 
-			maxActive="8" maxIdle="4" maxWait="5000"/>			
-</context>

@@ -10,8 +10,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import member.MemberBean;
-import member.MemberDao;
+import _trip.DAO.MemberDao;
+import _trip.model.MemberBean;
 
 
 

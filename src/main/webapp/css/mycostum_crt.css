@@ -21,17 +21,7 @@ background:rgb(101, 183, 238);
  	padding: 0px 50px; 
 }
 
-.crt-table {
-	margin: 0 auto;
-	
-	
-}
-.crt-td{border:solid;}
 
-
-.crt-th {
-	border:  solid;
-}
 
 .er{
 	padding: 0px 40%;
@@ -43,18 +33,12 @@ background:rgb(101, 183, 238);
 
 .main {
 	width: 700px;
-}
-
-.maintd {
-	width: 99%;
-	height: 100%;
 	
 }
 
 
 
-.crt-textarea {
-	
+.crt-textarea{
 	width: 99%;
 	margin:auto;
 	resize: none;
@@ -64,4 +48,11 @@ background:rgb(101, 183, 238);
 .divmain {
 padding:1em;
 	
+}
+
+.modal-content{
+	padding:10px;
+}
+.btn-primary{
+	margin:0 auto;
 }

@@ -13,8 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-import member.MemberBean;
-import member.MemberDao;
+import _trip.DAO.MemberDAOI;
+import _trip.DAO.MemberDao;
+import _trip.model.MemberBean;
 
 
 
@@ -51,7 +52,7 @@ public class resign extends HttpServlet {
 			}
 		}
 		try {
-			MemberDao md = new MemberDao();
+			MemberDAOI md = new MemberDao();
 			MemberBean mb = new MemberBean(memberid, password);
 			int n = md.saveMember(mb);
 			if (n == 1) {
