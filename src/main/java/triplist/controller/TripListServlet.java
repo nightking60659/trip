@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import triplist.Dao.TripListDao;
+import triplist.model.TripListBean;
+
 public class TripListServlet extends HttpServlet {
 
 	@Override
@@ -20,7 +23,31 @@ public class TripListServlet extends HttpServlet {
 		request.setAttribute("MsgMap", "erroMsg");
 		Map<String, String> msgOK = new HashMap<String, String>();
 		request.setAttribute("MsgOK", "msgOK");
-//		
+
+		String viewName = request.getParameter("viewName");
+		 java.sql.Date  StartTime = java.sql.Date.valueOf(request.getParameter("StartTime"));
+		 java.sql.Date  endTime=java.sql.Date.valueOf(request.getParameter("endTime"));
+		 String tripType=request.getParameter("tripType");
+		 String tripname=request.getParameter("tripname");
+		 int tripid=Integer.parseInt(request.getParameter("tripid"));
+		 int tripday=Integer.parseInt(request.getParameter("tripday"));
+		 int viewid=Integer.parseInt(request.getParameter("viewid"));
+		 
+		 //驗證
+		 
+		 //service
+		 
+		 //DAO
+		 TripListBean bean = new TripListBean(viewName, StartTime, endTime, tripType, tripname, tripid, tripday, viewid);
+		 TripListDao dao = new TripListDao();
+		 bean =dao.insert(bean);
+		 
+		 msgOK.put("insertOK", "新增成功");
+		 request.setAttribute("bean", bean);
+		 response.sendRedirect("index.jsp");
+		 return;
+		 
+		 
 	}
 
 	@Override

@@ -67,7 +67,7 @@ public class TripAllservlet extends HttpServlet {
 			TripAllDAO dao = new TripAllDAO();
 			
 			TripAllBean bean =new TripAllBean(tripName,start,end,tripDays);
-			dao.insert(bean);
+			bean = dao.insert(bean);
 			
 			msgOK.put("insertOK", "新增成功");
 			response.sendRedirect("index.jsp");
