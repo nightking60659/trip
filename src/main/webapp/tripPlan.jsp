@@ -14,11 +14,13 @@
         margin:0;
         padding:0;
         }
+        
+       
         .triplist{
-            width:350px;
+            width:100%;
             padding:10px auto;
             overflow: auto;
-            height: 600px;
+            height: 100%;
        
         }
         .tripnum{
@@ -33,6 +35,8 @@
         }
         .tripcontext{
             margin:5px auto;
+            height:15%;
+            width:100%;
         }
         #arrow{
         width:50px;
@@ -67,10 +71,10 @@
             margin:0 auto;
            width:90%;
         }
-        #tripContext{
+        .tripContext{
             overflow: auto;
             background-color: aqua;
-            width:350px;
+            width:100%;
         }
         .time.contex{
             font-size: 5px;
@@ -90,8 +94,9 @@
         .foot{
             background-color: aqua;
             width:350px;
-            height:100px;
+            height:15%;
             padding: auto;
+            width:100%;
         }
         .foot .main{
             border:5px solid white;
@@ -102,8 +107,9 @@
           
         }
         .aside{
-            width:350px;
+            width:20%;
             float:left;
+            height:100%;
         }
         .listContext{
             width:320px;
@@ -118,17 +124,20 @@
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
-        height: 100%;
+        height:100%;
         margin: 0;
         padding: 0;
       }
+      
     </style>
 </head>
 <body>
-<div class="container">
+
+
     <div class="aside">
-		<div id="tripContext">
-			<h3>tripname</h3>
+    	<div class="triplist">
+		<div class="tripContext">
+			<h3>tripname</h3> 
 				<div class="timestyle col-5">
 			        <span class="time contex">08:00</span>
 			        <br>
@@ -137,8 +146,7 @@
 			        <span class="time contex">10:00</span>
 			    </div>
 		</div>
-
-    	<div class="triplist">
+	
         	<div class="tripnum"><center><h6 class="tripcontext">Day1</h6></center></div>
         	<img id="arrow" src="images/btn.png">
 
@@ -158,14 +166,12 @@
 
        
 	        <div class="foot">
-	            <div class="foot main"><center><span>+新增天數</span></center></div>
+	            <div class="foot main"><center><h6>+新增天數</h6></center></div>
 	        </div>
     	</div>
     </div>
-</div>
 
-
-${range}
+<div class="main">
 <div class="search-container">
     <form action="/action_page.php">
       <input type="text" placeholder="Search.." name="search">
@@ -173,8 +179,8 @@ ${range}
     </form>
   </div>
  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">新增行程</button>	
-   <div id="map" >here</div>
-</div> 
+   <div id="map" ></div>
+ 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -203,6 +209,7 @@ ${range}
             </div>
         </div>
         
+</div>
 
         <script>
 

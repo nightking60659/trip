@@ -8,7 +8,7 @@ public interface TripDaoInterface {
 
 	TripAllBean Select_Tripid(TripAllBean bean);
 
-	TripAllBean select();
+	TripAllBean selectAllTrip();
 
 	TripAllBean insert(TripAllBean bean);
 

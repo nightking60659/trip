@@ -1,19 +1,64 @@
 package tripview.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import triplist.model.TripListBean;
+
+@Entity
+@Table(name="travelView")
 public class TripViewBean {
+	@Id
+	@Column(name="viewid")
 	private int viewid;
+	@Column(name="imageSource")
 	private String imageSource;
+	@Column(name="memberid")
 	private int memberid;
-	private String Viewname;
+	@Column(name="viewName")
+	private String viewName;
+	@Column(name="viewQuery")
 	private String viewQuery;
+	@Column(name="viewPicQuery")
 	private String viewPicQuery;
+	@Column(name="viewadr")
 	private String viewadr;
+	@Column(name="viewWeb")
 	private String viewWeb;
+	@Column(name="viewPhone")
 	private String viewPhone;
+	@Column(name="viewOpenTime")
 	private String viewOpenTime;
+	@Column(name="coordx")
 	private String coordx;
+	@Column(name="coordy")
 	private String coordy;
+	@Column(name="tdate")
 	private java.sql.Date tdate;
+	
+	private TripViewBean view;
+	
+	@OneToMany(targetEntity=TripListBean.class, mappedBy="TripViewBean", fetch=FetchType.EAGER)
+	public TripViewBean getView() {
+		return view;
+	}
+	
+	public void setView(TripViewBean view) {
+		this.view = view;
+	}
+	
+	
+	
+	
+
+
+
+
+
 	public int getViewid() {
 		return viewid;
 	}
@@ -33,10 +78,10 @@ public class TripViewBean {
 		this.memberid = memberid;
 	}
 	public String getViewname() {
-		return Viewname;
+		return viewName;
 	}
 	public void setViewname(String viewname) {
-		Viewname = viewname;
+		viewName = viewname;
 	}
 	public String getViewQuery() {
 		return viewQuery;

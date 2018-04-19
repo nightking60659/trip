@@ -93,7 +93,7 @@ public class TripAllDAO implements TripDaoInterface {
 	
 	
 	@Override
-	public TripAllBean select() {
+	public TripAllBean selectAllTrip() {
 		TripAllBean result=null;
 		Connection conn = null;
 		PreparedStatement stmt = null;
