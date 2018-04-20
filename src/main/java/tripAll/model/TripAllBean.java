@@ -1,13 +1,16 @@
 package tripAll.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import triplist.model.TripListBean;
+import tripview.model.TripViewBean;
 
 @Entity
 @Table(name="TravelPlan")
@@ -37,13 +40,20 @@ public class TripAllBean {
 		this.travelDays = travelDays;
 	}
 	
-	private TripAllBean travel;
-	@OneToMany(targetEntity=TripListBean.class, mappedBy="TripAllBean", fetch=FetchType.EAGER)
-	public TripAllBean getTravel() {
+	private Set<TripViewBean> travel;
+	
+	public Set<TripViewBean> getTravel() {
 		return travel;
 	}
 	
-	public void setTravel(TripAllBean travel) {
+	
+	@ManyToMany
+	@JoinTable(name="TripListBean",joinColumns=@JoinColumn(name="traveId"),
+	inverseJoinColumns=@JoinColumn(name="viewid"))
+	private Set<TripViewBean> tripList;
+	
+	
+	public void setTravel(Set<TripViewBean> travel) {
 		this.travel = travel;
 	}
 	
@@ -51,7 +61,7 @@ public class TripAllBean {
 	
 	
 	
-	
+
 	public int getMemberid() {
 		return memberid;
 	}

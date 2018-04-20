@@ -1,13 +1,16 @@
 package tripview.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import triplist.model.TripListBean;
+import tripAll.model.TripAllBean;
 
 @Entity
 @Table(name="travelView")
@@ -40,17 +43,21 @@ public class TripViewBean {
 	@Column(name="tdate")
 	private java.sql.Date tdate;
 	
-	private TripViewBean view;
+	private Set<TripAllBean> view;
 	
-	@OneToMany(targetEntity=TripListBean.class, mappedBy="TripViewBean", fetch=FetchType.EAGER)
-	public TripViewBean getView() {
-		return view;
+	@ManyToMany
+	@JoinTable(name="TripListBean",joinColumns=@JoinColumn(name="viewid"),
+	inverseJoinColumns=@JoinColumn(name="travelId"))
+	private Set<TripAllBean> tripList;
+	
+	
+	
+	public Set<TripAllBean> getTripList() {
+		return tripList;
 	}
-	
-	public void setView(TripViewBean view) {
-		this.view = view;
+	public void setTripList(Set<TripAllBean> tripList) {
+		this.tripList = tripList;
 	}
-	
 	
 	
 	

@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import tripAll.model.TripAllBean;
@@ -33,22 +34,32 @@ public class TripListBean {
 	private TripViewBean tripViewBean;
 
 	@Id
+	@Column(name="travelId")
 	private int travelId;
 	
 	@Id
+	@Column(name="viewid")
 	private int viewid;
 	
 	@Column(name="tripday")
 	private int tripday;
 	
-	@ManyToOne
-	@JoinColumn(name="tripid")
+//	@ManyToOne
+//	@JoinColumn(
+//			name="travelId",
+//			referencedColumnName="travelId"
+//	)
+	private TripAllBean TripALL;
 	public TripAllBean getTripAllBean() {
 		return tripAllBean;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name="viewid")
+//	@ManyToOne
+//	@JoinColumn(
+//			name="viewid",
+//			referencedColumnName="viewid"
+//	)
+	private TripViewBean tripview;
 	public TripViewBean getTripViewBean() {
 		return tripViewBean;
 	}
