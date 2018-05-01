@@ -6,14 +6,14 @@ import tripAll.model.TripAllBean;
 
 public interface TripDaoInterface {
 
-	TripAllBean Select_Tripid(TripAllBean bean);
+	TravelAllBean Select_Tripid(TravelAllBean bean);
 
-	TripAllBean selectAllTrip();
+	TravelAllBean selectAllTrip();
 
-	TripAllBean insert(TripAllBean bean);
+	TravelAllBean insert(TravelAllBean bean);
 
-	TripAllBean updateTrip(TripAllBean bean) throws SQLException;
+	TravelAllBean updateTrip(TravelAllBean bean) throws SQLException;
 
-	int delete(TripAllBean bean);
+	int delete(TravelAllBean bean);
 
 }

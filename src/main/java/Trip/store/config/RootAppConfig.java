@@ -32,7 +32,7 @@ public class RootAppConfig {
 			
 			e.printStackTrace();
 		}
-		ds.setJdbcUrl("jdbc:sqlserver://127.0.0.1:1433;DatabaseName=tripdb");
+		ds.setJdbcUrl("jdbc:sqlserver://127.0.0.1:1433;DatabaseName=Startrip");
 		ds.setInitialPoolSize(4);
 		ds.setMaxPoolSize(8);
 		
@@ -45,7 +45,7 @@ public class RootAppConfig {
 		factory.setDataSource(dataSource());
 		//設定scan
 		System.out.println("scan");
-		factory.setPackagesToScan(new String[] {"tripAll","triplist","tripview"});
+		factory.setPackagesToScan(new String[] {"_trip","travelPlan"});
 		factory.setHibernateProperties(addininalProperties());
 		return factory;
 	}
